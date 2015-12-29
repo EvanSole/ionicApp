@@ -34,10 +34,12 @@ ionic emulate android|ios
 
 # Start server
 
-https://github.com/EvanSole/ionicApp/blob/master/app.png
-
-
 ionic serve 
+
+
+![](https://github.com/EvanSole/ionicApp/blob/master/app.png)
+
+
 
 
 
