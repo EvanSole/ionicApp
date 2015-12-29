@@ -1,4 +1,4 @@
-# ionicDemo
+# ionicApp
 
 
 Hybrid App
@@ -34,7 +34,7 @@ ionic emulate android|ios
 
 # Start server
 
-ionic serv 
+ionic serve 
 
 
 
