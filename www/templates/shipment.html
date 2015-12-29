@@ -1,0 +1,76 @@
+<ion-view view-title="进出存面板" xmlns="http://www.w3.org/1999/html">
+    <ion-pane ng-controller="ShipmentCtrl" >
+        <ion-header-bar align-title="center" class="bar-dark">
+            <h1 class="title">进出存汇总中心</h1>
+            <!--<button class="button button-icon icon ion-navicon button-outline"></button>-->
+        </ion-header-bar>
+        <ion-content>
+            <div class="row responsive-sm">
+                <div class="col col-20 col-heigth-40">
+                    <label class="item item-input item-select">
+                        <i class="icon ion-home"></i>
+                        <div class="input-label">区域</div>
+                        <select name="warehouseNo" ng-model="warehouseNo">
+                           <option value="HD">华东</option>
+                           <option value="HN">华南</option>
+                           <option value="HZ">华中</option>
+                           <option value="HB">华北</option>
+                           <option value="XN">西南</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="col col-30 drop_down col-heigth-40 row-horizontal-no-padding">
+                    <div class="col col-30">
+                        <div class="row row-horizontal-no-padding">
+                            <label class="item item-input" style="top: -9px;width: 100%">
+                                <i class="icon ion-android-calendar">&nbsp;&nbsp;</i>
+                                <ionic-datepicker input-obj="datepickerObjectStart">
+                                    <input style="padding: 2px;background-color: white;" name="startDate" ng-model="startDate" type="text" readonly placeholder="日期">
+                                </ionic-datepicker>
+                            </label>
+                            <label class="item item-input" style="top: -9px">
+                                <i class="icon ion-android-time">&nbsp;&nbsp;</i>
+                                <ionic-timepicker input-obj="timePickerObjectStart">
+                                    <input style="padding: 2px;background-color: white;" name="startTime" ng-model="startTime" type="text" readonly placeholder="时间">
+                                </ionic-timepicker>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-30 drop_down col-heigth-40 row-horizontal-no-padding">
+                    <div class="col col-30">
+                        <div class="row row-horizontal-no-padding">
+                            <label class="item item-input" style="top: -9px;width: 100%">
+                                <i class="icon ion-android-calendar">&nbsp;&nbsp;</i>
+                                <ionic-datepicker input-obj="datepickerObjectEnd">
+                                    <input style="padding: 2px;background-color: white;" name="endDate" ng-model="endDate"  type="text" readonly placeholder="日期">
+                                </ionic-datepicker>
+                            </label>
+                            <label class="item item-input" style="top: -9px">
+                                <i class="icon ion-android-time">&nbsp;&nbsp;</i>
+                                <ionic-timepicker input-obj="timePickerObjectEnd">
+                                    <input style="padding: 2px;background-color: white;" name="endTime" ng-model="endTime" type="text" readonly placeholder="时间">
+                                </ionic-timepicker>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col col-20">
+                     <button style="top:-11px;" class="button button-full button-calm" ng-click="searchShipmentReport($event)">查&nbsp;&nbsp;询</button>
+                </div>
+            </div>
+
+            <div class="row responsive-sm">
+                <div class="card col col-85">
+                    <p class="card-title">订&nbsp;单&nbsp;数</p>
+                    <canvas id="bar" class="chart chart-bar" chart-data="bardata" height="100%"
+                            chart-labels="barlabels"  chart-legend="true" chart-series="barseries">
+                    </canvas>
+                </div>
+            </div>
+
+        </ion-content>
+    </ion-pane>
+</ion-view>

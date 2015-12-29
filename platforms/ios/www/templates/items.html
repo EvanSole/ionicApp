@@ -1,0 +1,18 @@
+<ion-view view-title="Drop-down Loding">
+    <ion-content>
+        <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+        <ion-list ng-controller="ItemCtrl">
+            <ion-item class="item item-avatar" ng-repeat="item in items" href="#">
+                <img src="{{item.user.picture.thumbnail}} " />
+                <h2>{{item.user.name.first}} {{item.user.name.last}}</h2>
+                <p>{{item.user.location.city}}</p>
+                <p>{{item.user.email}}</p>
+                <ion-option-button class="button button-assertive" ng-click="items.splice($index, 1)">
+                    Delete
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="doRefresh()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>
+

@@ -1,0 +1,40 @@
+<ion-view view-title="库存汇总中心面板">
+    <ion-pane ng-controller="ChartCtrl" >
+        <ion-header-bar align-title="center" class="bar-dark">
+            <h1 class="title">库存汇总中心面板</h1>
+            <!--<button class="button button-icon icon ion-navicon button-outline"></button>-->
+        </ion-header-bar>
+        <ion-header-bar align-title="center" class="bar-subheader">
+            <div class="button-bar">
+                <a class="button button-light button_light_tab selected"  id="tab-day" ng-click="doGetChartData(0,$event)">日</a>
+                <a class="button button-light button_light_tab" id="tab-week" ng-click="doGetChartData(1,$event)">周</a>
+                <a class="button button-light button_light_tab" id="tab-month" ng-click="doGetChartData(2,$event)">月</a>
+                <a class="button button-light button_light_tab" id="tab-year" ng-click="doGetChartData(3,$event)">年</a>
+            </div>
+        </ion-header-bar>
+
+        <ion-content>
+            <ion-refresher on-refresh="doRefresh()" pulling-text="下拉刷新..." refreshing-icon="ion-loading-c"></ion-refresher>
+            <div class="row responsive-sm">
+                <div class="card col col-85">
+                    <p class="card-title">入&nbsp;&nbsp;库</p><lable class="lable-total">总计：{{inbTotal}}</lable>
+                    <canvas id="line" class="chart chart-line" chart-data="inbData"
+                            chart-labels="labels" chart-legend="true" chart-series="series_inb" chart-hover="onHover()">
+                    </canvas>
+                </div>
+                <div class="card col col-85">
+                    <p class="card-title">出&nbsp;&nbsp;库</p><lable class="lable-total">总计：{{oubTotal}}</lable>
+                    <canvas id="line" class="chart chart-line" chart-data="oubData"
+                            chart-labels="labels" chart-legend="true" chart-series="series_oub" chart-hover="onHover()" >
+                    </canvas>
+                </div>
+                <div class="card col col-85">
+                    <p class="card-title">库&nbsp;&nbsp;存</p><lable class="lable-total">总计：{{onHandTotal}}</lable>
+                    <canvas id="line" class="chart chart-line" chart-data="onHandData"
+                            chart-labels="labels" chart-legend="true" chart-series="series_onHand" chart-hover="onHover()" >
+                    </canvas>
+                </div>
+            </div>
+        </ion-content>
+    </ion-pane>
+</ion-view>

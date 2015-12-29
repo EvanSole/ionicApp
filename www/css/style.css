@@ -1,0 +1,81 @@
+/* Empty. Add your own CSS if you like */
+
+.bar.bar-pink {
+    border-color: #FF69B4;
+    background-color: #FF6599;
+    background-image: linear-gradient(0deg, #FF69B4, #FF69B4 50%, transparent 50%);
+    color: #fff; }
+.bar.bar-pink .title {
+    color: #fff; }
+.bar.bar-pink.bar-footer {
+    background-image: linear-gradient(180deg, #FF69B4, #FF69B4 50%, transparent 50%); }
+
+.card-title {
+    text-align: center;font-size:14px; font-weight: bold;font-family: 'Courier New';margin:6px 6px 6px;
+}
+
+.lable-total{
+    float: right;
+    margin-right: 10px;
+}
+
+
+/* Shutter Out Horizontal */
+.button_light_tab {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    background: #e1e1e1;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.button_light_tab:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FF6599;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+
+.button_light_tab:hover, .button_light_tab:active {
+    color: white;
+}
+.button_light_tab:hover:before, .button_light_tab:active:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+.button-bar > .selected{
+    background: #FF6599;
+}
+
+
+.row > .col-heigth-40{
+    height: 40px;
+}
+
+.row-horizontal-no-padding {
+    padding-left: 0px;
+    padding-right:0px;
+}
